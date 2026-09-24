@@ -4,6 +4,10 @@
 
 Dépôt de recherche consacré à la **Constante / formule Brutus**, figée le **2026-09-19**.
 
+## Créateur / auteur
+
+**Gabriel St-Pierre (Topbrutus)** — créateur de la formule candidate Brutus V1 et auteur du dossier de recherche.
+
 ## Archive officielle
 
 - **Zenodo record :** https://zenodo.org/records/22927791
@@ -30,7 +34,7 @@ Résultat numérique :
 2.2335763974987408 × 10^-22
 ```
 
-Unité proposée par Topbrutus : **g**.
+Unité proposée par **Gabriel St-Pierre (Topbrutus)** : **g**.
 
 > L'unité « g » est une hypothèse d'interprétation. Elle n'est pas dérivée dimensionnellement de la formule telle qu'elle est écrite.
 
