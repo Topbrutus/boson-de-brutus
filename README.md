@@ -1,6 +1,14 @@
 # Boson de Brutus
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22927791.svg)](https://doi.org/10.5281/zenodo.22927791)
+
 Dépôt de recherche consacré à la **Constante / formule Brutus**, figée le **2026-09-19**.
+
+## Archive officielle
+
+- **Zenodo record :** https://zenodo.org/records/22927791
+- **DOI version v0.1.0 :** https://doi.org/10.5281/zenodo.22927791
+- **Concept DOI :** https://doi.org/10.5281/zenodo.22927790
 
 ## Statut
 
