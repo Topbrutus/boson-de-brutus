@@ -35,11 +35,14 @@ jobs:
       - name: Protect frozen V1
         run: python -m unittest -v test_reproduce.py
 
-      - name: Verify exact V2 chain
+      - name: Verify corrected V2 reconstruction
         run: python -m unittest -v test_reproduce_v2.py
 
       - name: Reproduce V1
         run: python calculs/reproduce.py
 
-      - name: Reproduce V2
+      - name: Reproduce intermediate chain
         run: python calculs/reproduce_v2.py
+
+      - name: Reproduce small mass anchor at high precision
+        run: python calculs/reproduce_mass_high_precision.py

@@ -1,6 +1,6 @@
 # Boson de Brutus
 
-> **Current development line: V2 high-precision candidate.** The original V1 remains frozen and unchanged.
+> **Correction status (v2.0.1):** Frozen V1 remains unchanged. The 576480... chain is an intermediate NEO/cadence calculation, not the final Boson mass candidate. A final V2 mass formula is not locked until the documented 4/7 branch is reconnected explicitly.
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22927791.svg)](https://doi.org/10.5281/zenodo.22927791)
 
@@ -69,74 +69,52 @@ La relation ci-dessus est considérée comme **FROZEN V1**. Aucun coefficient, c
 
 **Une proximité numérique est une observation. Elle n'est pas, à elle seule, une explication physique.**
 
-
 ---
 
-# V2 — High-Precision Candidate Relation
+# V2 reconstruction status
 
-V2 does **not** replace Frozen V1. It is a separate derivation built from the later high-precision 240.1/femtosecond residual chain.
-
-The exact rational chain is:
+The previously published v2.0.0 release incorrectly promoted the high-precision NEO/cadence value
 
 [
-f_{m abs}
-=
-rac{240.1}{1-240.1	imes10^{-15}}
-=
-rac{2401000000000000000}{9999999999997599}
+576480.0999991384128720100332329305696089792266297631159ldots
 ]
 
-[
-NEO_{m exact}
-=
-2401 f_{m abs}
-=
-rac{5764801000000000000000}{9999999999997599}
-]
+as if it were the final Boson V2 mass candidate.
 
-and the internal V2 candidate is
+That interpretation is withdrawn.
+
+The value above remains a reproducible **intermediate mathematical quantity** from the 240.1 Hz / 1 fs chain. It is not assigned a mass unit here.
+
+The small frozen Brutus relation, evaluated at high precision without changing its formula, is
 
 [
 oxed{
-B_{m V2}
-=
-NEO_{m exact}-10^{-6}
-=
-rac{5764800999990000000000002401}
-{9999999999997599000000}
+2.233576397498740792411442896327489490267550118723876865300357561047027907489616401334082266253205148830761002425428929ldots	imes10^{-22}
 }
 ]
 
-with decimal expansion beginning
+If, and only if, the same historical project convention of grams is provisionally applied, the equivalent mass is
 
 [
-576480.09999913841287201003323293056960897922662976311591231380612413ldots
+oxed{
+125.2944470513553891726729240992025119613201616521227042175770269524274426944ldots mathrm{GeV}/c^2
+}
 ]
 
-The structural (4/7) branch is preserved exactly rather than truncated:
+using exact SI values of (e) and (c).
+
+The structural (4/7) branch is preserved separately. No final V2 mass formula is declared until the exact documented map
 
 [
-rac47,NEO_{m exact}
-=
-rac{3294172000000000000000}{9999999999997599}
+	ext{4/7 branch} ightarrow 	ext{small Boson output}
 ]
 
-and
-
-[
-rac47,B_{m V2}
-=
-rac{5764800999990000000000002401}
-{17499999999995798250000}.
-]
-
-These (4/7) values are arithmetic transforms only. No physical equivalence is claimed from them.
+is recovered and tested.
 
 Files:
-- `V2/BOSON-BRUTUS-V2-HAUTE-PRECISION.md`
-- `calculs/reproduce_v2.py`
+- `V2/CORRECTION-v2.0.1.md`
+- `calculs/reproduce_mass_high_precision.py`
+- `calculs/reproduce_v2.py` — retained as an intermediate-chain reproducer only
 - `test_reproduce_v2.py`
 
-V2 status remains:
-
-**CANDIDAT — VALIDATION PHYSIQUE NON ÉTABLIE**
+**CALCULATION ≠ PHYSICAL VALIDATION.**

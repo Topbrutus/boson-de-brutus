@@ -4,16 +4,16 @@
       "name": "St-Pierre, Gabriel"
     }
   ],
-  "title": "Boson de Brutus — High-Precision Candidate Relation V2",
-  "version": "2.0.0",
+  "title": "Boson de Brutus — V2 Reconstruction Correction",
+  "version": "2.0.1",
   "upload_type": "software",
   "access_right": "open",
   "language": "eng",
-  "description": "V2 preserves Frozen V1 unchanged and adds an exact-rational high-precision propagation chain from the 240.1 Hz / 1 fs construction through NEO and the internal Boson V2 candidate. Exact four-sevenths transforms are archived as arithmetic relations only. Physical validation is not established.",
+  "description": "Correction release: the 576480... high-precision chain is retained as an intermediate NEO/cadence calculation, not a final Boson mass. Frozen V1 remains unchanged and is evaluated at high precision. The final V2 mass relation remains unlocked pending recovery of the documented 4/7 mapping. Physical validation is not established.",
   "keywords": [
     "high precision",
-    "exact rational arithmetic",
-    "numerical candidate",
+    "numerical provenance",
+    "correction",
     "reproducibility",
     "Brutus"
   ]

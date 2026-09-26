@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Reproduce Boson de Brutus V2 with exact rational arithmetic."""
+"""Reproduce the exact high-precision NEO/cadence intermediate chain.
+
+Important: these values are intermediate mathematical quantities.
+They are not the final Boson mass candidate.
+"""
 
 from decimal import Decimal, localcontext
 from fractions import Fraction
@@ -11,9 +15,9 @@ OFFSET = Fraction(1, 10**6)
 
 F_ABS = F0 / (1 - F0 * DT)
 NEO_EXACT = SCALE_2401 * F_ABS
-BOSON_V2 = NEO_EXACT - OFFSET
+NEO_OFFSET_INTERMEDIATE = NEO_EXACT - OFFSET
 FOUR_SEVENTHS_NEO = Fraction(4, 7) * NEO_EXACT
-FOUR_SEVENTHS_BOSON = Fraction(4, 7) * BOSON_V2
+FOUR_SEVENTHS_INTERMEDIATE = Fraction(4, 7) * NEO_OFFSET_INTERMEDIATE
 
 
 def decimal_string(value: Fraction, digits: int = 220) -> str:
@@ -25,14 +29,20 @@ def decimal_string(value: Fraction, digits: int = 220) -> str:
 def main() -> None:
     print(f"f_abs exact = {F_ABS.numerator}/{F_ABS.denominator}")
     print(f"NEO exact = {NEO_EXACT.numerator}/{NEO_EXACT.denominator}")
-    print(f"Boson V2 exact = {BOSON_V2.numerator}/{BOSON_V2.denominator}")
+    print(
+        "NEO offset intermediate exact = "
+        f"{NEO_OFFSET_INTERMEDIATE.numerator}/{NEO_OFFSET_INTERMEDIATE.denominator}"
+    )
     print(f"4/7 NEO exact = {FOUR_SEVENTHS_NEO.numerator}/{FOUR_SEVENTHS_NEO.denominator}")
-    print(f"4/7 Boson V2 exact = {FOUR_SEVENTHS_BOSON.numerator}/{FOUR_SEVENTHS_BOSON.denominator}")
+    print(
+        "4/7 intermediate exact = "
+        f"{FOUR_SEVENTHS_INTERMEDIATE.numerator}/{FOUR_SEVENTHS_INTERMEDIATE.denominator}"
+    )
     print("f_abs =", decimal_string(F_ABS))
     print("NEO =", decimal_string(NEO_EXACT))
-    print("Boson V2 =", decimal_string(BOSON_V2))
+    print("NEO offset intermediate =", decimal_string(NEO_OFFSET_INTERMEDIATE))
     print("4/7 NEO =", decimal_string(FOUR_SEVENTHS_NEO))
-    print("4/7 Boson V2 =", decimal_string(FOUR_SEVENTHS_BOSON))
+    print("4/7 intermediate =", decimal_string(FOUR_SEVENTHS_INTERMEDIATE))
 
 
 if __name__ == "__main__":

@@ -1,158 +1,33 @@
-# Boson de Brutus — V2 haute précision
+# V2 intermediate chain — superseded semantic interpretation
 
-**Version:** 2.0.0  
-**Date:** 2026-09-25  
-**Auteur:** Gabriel St-Pierre (Topbrutus)  
-**Statut:** candidat mathématique / interprétation physique non établie
+This file preserves the exact arithmetic that was published in v2.0.0, but corrects its interpretation.
 
-## 1. Règle de continuité
-
-Frozen V1 reste inchangée.
-
-V2 est une nouvelle lignée de calcul. Elle ne remplace pas, ne réajuste pas et ne réécrit pas V1.
-
-## 2. Entrée de cadence
+The value
 
 [
-f_0 = 240.1 = rac{2401}{10}
+576480.0999991384128720100332329305696089792266297631159ldots
 ]
 
-et
+is an **intermediate NEO/cadence quantity**. It is not the final Boson mass candidate.
+
+See:
+
+- `V2/CORRECTION-v2.0.1.md`
+- `calculs/reproduce_v2.py`
+- `calculs/reproduce_mass_high_precision.py`
+
+The exact rational intermediate remains
 
 [
-Delta T = 10^{-15}.
+rac{5764800999990000000000002401}{9999999999997599000000}.
 ]
 
-La contrainte choisie est
+Its exact four-sevenths transform remains
 
 [
-rac1{f_0}-rac1f=Delta T.
+rac{5764800999990000000000002401}{17499999999995798250000}.
 ]
 
-Donc
+These are retained for provenance only.
 
-[
-f
-=
-rac{f_0}{1-f_0Delta T}
-=
-rac{2401000000000000000}{9999999999997599}.
-]
-
-Décimal haute précision:
-
-[
-f=
-240.1000000000576480100000138412872010033232930569608979226629763115912313806124130546544850403744225418581938988523001523551144372665804629763877059691606306882031954674282375872317295198446943382577147111106156773021376588241202432518836712704047773ldots
-]
-
-## 3. Propagation 2401
-
-[
-NEO_{m exact}=2401f.
-]
-
-Forme rationnelle exacte:
-
-[
-oxed{
-NEO_{m exact}
-=
-rac{5764801000000000000000}{9999999999997599}
-}
-]
-
-Décimal:
-
-[
-576480.1000001384128720100332329305696089792266297631159123138061241305465448504037442254185819389885230015235511443726658046297638770596916063068820319546742823758723172951984469433825771471111061567730213765882412024325188367127040477726947202418703ldots
-]
-
-## 4. Boson de Brutus V2 — candidat interne
-
-Définition de travail:
-
-[
-B_{m V2}=NEO_{m exact}-10^{-6}.
-]
-
-Forme rationnelle exacte:
-
-[
-oxed{
-B_{m V2}
-=
-rac{5764800999990000000000002401}
-{9999999999997599000000}
-}
-]
-
-Décimal:
-
-[
-oxed{
-576480.0999991384128720100332329305696089792266297631159123138061241305465448504037442254185819389885230015235511443726658046297638770596916063068820319546742823758723172951984469433825771471111061567730213765882412024325188367127040477726947202418703ldots
-}
-]
-
-## 5. Branche exacte quatre-septièmes
-
-Le facteur structurel est conservé sous sa forme exacte:
-
-[
-rac47
-=
-0.overline{571428}.
-]
-
-Appliqué à NEO:
-
-[
-oxed{
-rac47 NEO_{m exact}
-=
-rac{3294172000000000000000}{9999999999997599}
-}
-]
-
-soit
-
-[
-329417.2000000790930697200189902460397765595580741503519498936034995031694542002307109859534753937077274294420292253558090312170079297483952036039325896883853042147841813115419696819329012269206320895845836437647092585328679066929737415843969829953544ldots
-]
-
-Appliqué au candidat V2:
-
-[
-oxed{
-rac47 B_{m V2}
-=
-rac{5764800999990000000000002401}
-{17499999999995798250000}
-}
-]
-
-soit
-
-[
-329417.199999507664498291447561674611205130986645578923378465032070931740882771659282414524903965136298858013457796784380459788436501176966632175361161116956732786212752740113398253361472655492060661013155072336137829961439335264402313012968411566783ldots
-]
-
-## 6. Ce qui est établi
-
-- les formes rationnelles ci-dessus sont exactes sous les définitions choisies;
-- les expansions décimales sont reproductibles à précision arbitraire;
-- V1 et V2 sont séparées;
-- la propagation du résidu est calculable.
-
-## 7. Ce qui n'est pas établi
-
-- que (B_{m V2}) est la masse d'un boson physique;
-- que (4/7) possède une signification physique;
-- que (NEO) est une constante fondamentale;
-- qu'une unité physique doit être attachée à ces nombres sans dérivation dimensionnelle indépendante.
-
-[
-oxed{	ext{CALCUL EXACT} 
-eq 	ext{VALIDATION PHYSIQUE}}
-]
+**Final Boson V2 mass relation: NOT YET LOCKED.**

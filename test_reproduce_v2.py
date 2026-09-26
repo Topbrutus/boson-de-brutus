@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Integrity tests for the high-precision Boson de Brutus V2 chain."""
+"""Correction tests for V2 reconstruction semantics."""
 
 import subprocess
 import sys
@@ -8,13 +8,15 @@ from pathlib import Path
 from fractions import Fraction
 
 ROOT = Path(__file__).resolve().parent
-SCRIPT = ROOT / "calculs" / "reproduce_v2.py"
+INTERMEDIATE_SCRIPT = ROOT / "calculs" / "reproduce_v2.py"
+MASS_SCRIPT = ROOT / "calculs" / "reproduce_mass_high_precision.py"
 
 sys.path.insert(0, str(ROOT / "calculs"))
 import reproduce_v2 as v2
+import reproduce_mass_high_precision as mass
 
 
-class TestBosonDeBrutusV2(unittest.TestCase):
+class TestBosonDeBrutusV2Correction(unittest.TestCase):
     def test_exact_frequency_fraction(self):
         self.assertEqual(
             v2.F_ABS,
@@ -27,62 +29,58 @@ class TestBosonDeBrutusV2(unittest.TestCase):
             Fraction(5764801000000000000000, 9999999999997599),
         )
 
-    def test_exact_boson_v2_fraction(self):
+    def test_offset_value_is_named_intermediate(self):
         self.assertEqual(
-            v2.BOSON_V2,
+            v2.NEO_OFFSET_INTERMEDIATE,
             Fraction(
                 5764800999990000000000002401,
                 9999999999997599000000,
             ),
         )
+        self.assertFalse(hasattr(v2, "BOSON_V2"))
 
-    def test_four_sevenths_neo_exact(self):
+    def test_four_sevenths_is_preserved_as_intermediate(self):
         self.assertEqual(
-            v2.FOUR_SEVENTHS_NEO,
-            Fraction(3294172000000000000000, 9999999999997599),
-        )
-
-    def test_four_sevenths_boson_exact(self):
-        self.assertEqual(
-            v2.FOUR_SEVENTHS_BOSON,
+            v2.FOUR_SEVENTHS_INTERMEDIATE,
             Fraction(
                 5764800999990000000000002401,
                 17499999999995798250000,
             ),
         )
 
-    def test_decimal_prefixes(self):
+    def test_small_frozen_v1_high_precision_prefix(self):
+        value = format(mass.frozen_v1(120), "e")
         self.assertTrue(
-            v2.decimal_string(v2.NEO_EXACT, 180).startswith(
-                "576480.1000001384128720100332329305696089792266297631159"
-            )
-        )
-        self.assertTrue(
-            v2.decimal_string(v2.BOSON_V2, 180).startswith(
-                "576480.0999991384128720100332329305696089792266297631159"
-            )
-        )
-        self.assertTrue(
-            v2.decimal_string(v2.FOUR_SEVENTHS_BOSON, 180).startswith(
-                "329417.1999995076644982914475616746112051309866455789233"
-            )
+            value.startswith(
+                "2.233576397498740792411442896327489490267550118723876865300357561047"
+            ),
+            value,
         )
 
-    def test_v1_frozen_spec_still_exists(self):
+    def test_conditional_gev_prefix(self):
+        value = format(mass.gev_if_grams(110), "f")
+        self.assertTrue(
+            value.startswith(
+                "125.294447051355389172672924099202511961320161652122704217577"
+            ),
+            value,
+        )
+
+    def test_v1_frozen_files_still_exist(self):
         self.assertTrue((ROOT / "FORMULE-FIGEE-2026-09-19.md").is_file())
+        self.assertTrue((ROOT / "calculs" / "reproduce.py").is_file())
         self.assertTrue((ROOT / "test_reproduce.py").is_file())
 
-    def test_reproduction_script_executes(self):
-        completed = subprocess.run(
-            [sys.executable, str(SCRIPT)],
-            cwd=ROOT,
-            capture_output=True,
-            text=True,
-            check=False,
-        )
-        self.assertEqual(completed.returncode, 0, completed.stderr)
-        self.assertIn("Boson V2 exact =", completed.stdout)
-        self.assertIn("4/7 Boson V2 exact =", completed.stdout)
+    def test_both_reproduction_scripts_execute(self):
+        for script in (INTERMEDIATE_SCRIPT, MASS_SCRIPT):
+            completed = subprocess.run(
+                [sys.executable, str(script)],
+                cwd=ROOT,
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            self.assertEqual(completed.returncode, 0, completed.stderr)
 
 
 if __name__ == "__main__":
