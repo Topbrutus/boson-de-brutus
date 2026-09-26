@@ -1,17 +1,18 @@
 cff-version: 1.2.0
-message: "If you use this research candidate, cite this repository and state clearly that physical validation is not established."
-title: "Boson de Brutus — Frozen Candidate Relation V1"
+message: "If you use this research candidate, cite the repository and state clearly that physical validation is not established."
+title: "Boson de Brutus — High-Precision Candidate Relation V2"
 type: software
 authors:
   - family-names: "St-Pierre"
     given-names: "Gabriel"
     alias: "Topbrutus"
-version: "0.1.0"
-date-released: "2026-09-23"
+version: "2.0.0"
+date-released: "2026-09-25"
 repository-code: "https://github.com/Topbrutus/boson-de-brutus"
-url: "https://zenodo.org/records/22927791"
-doi: "10.5281/zenodo.22927791"
-identifiers:
-  - type: doi
-    value: "10.5281/zenodo.22927791"
-abstract: "Frozen numerical candidate relation, reproducibility code, limitations and falsification protocol. Physical validation is not established."
+abstract: "V2 preserves Frozen V1 unchanged and adds an exact-rational high-precision propagation chain from the 240.1 Hz / 1 fs construction through NEO and the internal Boson V2 candidate, including exact four-sevenths transforms. Physical validation is not established."
+keywords:
+  - high precision
+  - exact rational arithmetic
+  - numerical candidate
+  - reproducibility
+  - Brutus
